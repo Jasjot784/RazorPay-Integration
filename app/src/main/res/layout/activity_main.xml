@@ -1,0 +1,35 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00b1e1"
+    android:orientation="vertical"
+    android:padding="20dp"    >
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:hint="Phone....."/>
+
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:hint="Email...."/>
+
+    <EditText
+        android:id="@+id/etMoney"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:hint="Amount...."
+        android:text="1"/>
+    <Button
+        android:id="@+id/btn_pay"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:text="Pay"/>
+
+
+</LinearLayout>
