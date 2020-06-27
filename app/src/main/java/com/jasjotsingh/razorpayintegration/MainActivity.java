@@ -23,15 +23,15 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity implements PaymentResultListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     EditText etAmount;
-    EditText etPhone,etEmail;
+   // EditText etPhone,etEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         etAmount = findViewById(R.id.etMoney);
-        etPhone = findViewById(R.id.etPhone);
-        etEmail = findViewById(R.id.etEmail);
+//        etPhone = findViewById(R.id.etPhone);
+//        etEmail = findViewById(R.id.etEmail);
 
 
         Checkout.preload(getApplicationContext());
@@ -86,19 +86,22 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
         amount = amount*100;
         final Checkout co = new Checkout();
         co.setKeyID("rzp_test_L76EmCRbcuEcev");
+        int image = R.drawable.ic_launcher_background; // Can be any drawable
+        co.setImage(image);
+
 
         try {
             JSONObject options = new JSONObject();
             options.put("name", "At Doc");
             options.put("description", "Charges");
             //You can omit the image option to fetch the image from dashboard
-            options.put("image", getDrawable(R.drawable.ic_launcher_foreground));
+            //options.put("image", getDrawable(R.drawable.ic_launcher_foreground));
             options.put("currency", "INR");
             options.put("amount", amount);
 
             JSONObject preFill = new JSONObject();
-            preFill.put("email", etEmail.getText().toString());
-            preFill.put("contact", etPhone.getText().toString());
+            preFill.put("email", "nowonderwhoiam123@gmail.com");
+            preFill.put("contact", "9463809630");
 
             options.put("prefill", preFill);
 
